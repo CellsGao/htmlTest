@@ -17,11 +17,19 @@ for(var i=0;i<para.length;i++){
 
 
 //setAttribute方法同getAttribute方法一样在获取节点后使用，可以设置节点属性值
-var para=document.getElementsByTagName("p");
+/*var para=document.getElementsByTagName("p");
 for(var i=0;i<para.length;i++){
     if (para[i].getAttribute('title') ===null){
         para[i].setAttribute("title","title test2");
         alert("para"+(i+1)+"has been set");
     }
+}*/
+
+
+//第四章 javascrip图片库
+function showPic(whichpic) {
+    var source=whichpic.getAttribute("href");
+    var placeholder=document.getElementById("placeHolder");
+    placeholder.setAttribute("src",source);
 }
 
