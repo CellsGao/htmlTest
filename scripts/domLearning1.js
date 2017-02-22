@@ -26,10 +26,12 @@ for(var i=0;i<para.length;i++){
 }*/
 
 
-//第四章 javascrip图片库
+//第四章 javascrip图片库   文档中每一样东西都是一个节点，包括空格和换行符，他们分为元素节点，属性节点，文本节点
 function showPic(whichpic) {
     var source=whichpic.getAttribute("href");
     var placeholder=document.getElementById("placeHolder");
     placeholder.setAttribute("src",source);
+    var text=whichpic.getAttribute("title");
+    var description=document.getElementById("description");
+    description.firstChild.nodeValue=text;  //P元素的nodeValue属性尾null，p元素的第一个子元素才是需要的文本。
 }
-
