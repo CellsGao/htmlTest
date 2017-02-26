@@ -35,3 +35,47 @@ function showPic(whichpic) {
     var description=document.getElementById("description");
     description.firstChild.nodeValue=text;  //P元素的nodeValue属性尾null，p元素的第一个子元素才是需要的文本。
 }
+
+
+function prepareGallery() {
+    //检查浏览器是否支持getElementById和getElementByTagName两种方法
+    if(!document.getElementById||!document.getElementsByTagName){
+        return false;
+    }
+    //检查是否存在imageGallery这个id
+    if(!document.getElementById("imageGallery")){
+        return false;
+    }
+    var gallery=document.getElementById("imageGallery");
+    var links=gallery.getElementsByTagName("a");
+    for(var i=0;i<links.length;i++){
+        links[i].onclick=function () {
+            showPic(this);
+            return false;
+        }
+    }
+}
+//添加事件处理函数，可以使window.onload处理多个函数
+function addLoadEvent(func) {
+    var oldonload=window.onload;
+    if(typeof window.onload!="function"){
+        window.onload=func;
+    }else{
+        window.onload=function(){
+            oldonload();
+            func();
+        }
+    }
+}
+
+addLoadEvent(prepareGallery());
+
+
+
+
+
+
+
+
+
+
