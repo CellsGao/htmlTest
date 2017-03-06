@@ -1,0 +1,7 @@
+#imageGallery li{
+    display: inline;
+}
+
+#imageGallery{
+    list-style: none;
+}

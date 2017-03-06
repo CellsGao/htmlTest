@@ -3,8 +3,12 @@
  */
 
 
-function popup(url) {
-    window.open(url,"popup","width=320,height=480");
-}
+window.onload=function () {
+    var para=document.createElement("p");
+    var test=document.createTextNode("this is a test node");
+    para.appendChild(test);
+    var testdiv=document.getElementById("testdiv");
+    testdiv.appendChild(para);
+};
 
 

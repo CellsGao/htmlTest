@@ -28,8 +28,10 @@ for(var i=0;i<para.length;i++){
 
 //第四章 javascrip图片库   文档中每一样东西都是一个节点，包括空格和换行符，他们分为元素节点，属性节点，文本节点
 function showPic(whichpic) {
+    if (!document.getElementById("placeholder")) return false;
     var source=whichpic.getAttribute("href");
     var placeholder=document.getElementById("placeHolder");
+    if(placeholder.nodeName!="IMG") return false;
     placeholder.setAttribute("src",source);
     var text=whichpic.getAttribute("title");
     var description=document.getElementById("description");
@@ -52,7 +54,7 @@ function prepareGallery() {
         links[i].onclick=function () {
             showPic(this);
             return false;
-        }
+        };
     }
 }
 //添加事件处理函数，可以使window.onload处理多个函数
