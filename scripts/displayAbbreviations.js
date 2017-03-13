@@ -32,6 +32,6 @@ function displayAbbreviation() {
     document.body.appendChild(header);
     document.body.appendChild(dlist);
 }
-//如果引用了addLoadEvent函数，则html文件中addLoadEvent的scrip标签必须在其之前，否则无效。
+//如果引用了addLoadEvent函数，则html文件中addLoadEvent的scrip标签必须在最前，否则无效。
 addLoadEvent(displayAbbreviation());
 
