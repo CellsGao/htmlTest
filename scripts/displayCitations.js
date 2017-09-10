@@ -7,6 +7,7 @@ function displayCitations() {
     if(!document.getElementsByTagName||!document.createElement||!document.createTextNode){
         return false;
     }
+    var gao=document.getElementsByT
     var quotes=document.getElementsByTagName("blockquote");
     for(var i=0;i<quotes.length;i++){
         if(!quotes[i].getAttribute("cite")){
